@@ -2,9 +2,9 @@
   import { Card, List, Li } from "flowbite-svelte";
   import { MapLibre, NavigationControl, ScaleControl, GeoJSONSource, CircleLayer, Marker, FeatureState, Popup } from 'svelte-maplibre-gl';
   import maplibregl from 'maplibre-gl';
+  import { PUBLIC_OS_APIKEY } from "$env/static/public";
 
-  let apiKey = "Hb91b0XytB0yTTKs6US3ge99l5JykewO";
-  let osUrl = "https://api.os.uk/maps/vector/v1/vts/resources/styles?srs=3857&key=" + apiKey;
+  let osUrl = "https://api.os.uk/maps/vector/v1/vts/resources/styles?srs=3857&key=" + PUBLIC_OS_APIKEY;
   let center = $state({ lng: -0.15718281, lat: 50.829578 });
   let { geojson } = $props();
   // $inspect(geojson)
