@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { Card, List, Li } from "flowbite-svelte";
   import { MapLibre, NavigationControl, ScaleControl, GeoJSONSource, CircleLayer, Marker, FeatureState, Popup } from 'svelte-maplibre-gl';
   import maplibregl from 'maplibre-gl';
 
@@ -13,9 +14,23 @@
   let lnglat = $state.raw(new maplibregl.LngLat(0, 0))
 </script>
 
+<div class="container">
+  <Card class="p-6 max-w-full mt-5 mb-10">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Hove Cafe Map</h5>
+    <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
+      <Li>OS Vector Map</Li>
+      <Li>not proxied, but I don't fully trust the OS docs here</Li>
+      <Li>MapLibre GL</Li>
+      <Li>local cafes via the free tier on GeoApify </Li>
+      <Li>via server request with api key safe in .env</Li>
+      <Li>just a single request searching in radius of my house for now</Li>
+    </List>
+  </Card>
+</div>
+
 <MapLibre
   class="h-[60vh] min-h-[300px]"
-  zoom={13}
+  zoom={14}
   minZoom={6}
   maxZoom={18}
   style={osUrl}
@@ -38,9 +53,9 @@
       true,
       ['==', ['get', 'type'], ['global-state', 'type']]
     ]}
-    onmousemove={(ev) => {
-      hoveredFeature = ev.features?.[0];
-      lnglat = ev.lngLat;
+    onmousemove={(event) => {
+      hoveredFeature = event.features?.[0];
+      lnglat = event.lngLat;
     }}
     onmouseleave={() => (hoveredFeature = undefined)}
   />

@@ -1,38 +1,20 @@
-# sv
+### Hosted Link
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+[https://gleeful-souffle-dc4e95.netlify.app/os_map](https://gleeful-souffle-dc4e95.netlify.app/os_map)
 
-## Creating a project
+### Technologies Used
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Node 25.2.1 (latest)
+- SvelteKit 5 for quick prototyping, comes with client framework and node backend
+- Flowbite UI, TailwindCSS
+- Netlify for easy hosting
+- MapLibre GL with Svelte wrapper
+- OS Data Hub for vector tile background mapping
+- GeoApify for feature GeoJSON
+- (free map) OpenStreetmap vector tiles via cartocdn
 
-```sh
-# create a new project in the current directory
-npx sv create
+### Install and run
 
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- with a reasonably recent node version
+- `bun install` or `npm install`
+- `bun dev` or `npm run dev`
